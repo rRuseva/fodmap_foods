@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href=" {{url_for('static', filename='lightbox/dist/css/lightbox.min.css')}} " rel="stylesheet" />
+    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+
+    <title>FODMAP храни</title>
+</head>
+<body>
+    <div class="container page-container">
+        <div class="row justify-content-center">
+            <div class="text-center page-description text-center ">
+                <h1 class="mb-5">Провери храна</h1>
+            </div>
+            <div class="justify-content-center input-group">
+                <form action="/foods">
+                    <input class="form-control" type="text" name="food" id="food" placeholder="Enter a food" />
+                    <button type="submit" class="btn btn-light">Submit</button>
+                </form>                
+            </div>
+            {% if number_of_results > 0 %}
+            <div class="row justify-content-center py-6">
+                <table>
+                    <tr>
+                        <th>Храна</th>
+                        <th>FODMAP</th>
+                        <th>Тип</th>
+                    </tr>
+                    {% for food in food_results %}
+                    <tr {% if food.fodmap_type == 'low' %} class="low" {% else %} class="high" {% endif%}>
+                        <td>{{ food.name }}</td>
+                        <td>{{ food.fodmap_type }}</td>
+                        <td>{{ food.category }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div> 
+</body>
+</html>

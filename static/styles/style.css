@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    background-color: #e8d9c5;
+    color: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    /* font-size: 2rem; */
+    /* background-image: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%); */
+
+}
+
+input, button {
+    font-size: 2rem;
+    /* padding: 1rem; */
+    border-radius: 10px;
+}
+
+.input-group{
+    margin: 10px;
+}
+
+input.form-control{
+    display: inline-block;
+    width: 70%;
+}
+
+.container.page-container {
+    background-color: #f6efe5;
+    color: #592500;
+    min-height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.page-container h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+
+table{
+    max-width: 70%;
+    margin: 10px;
+}
+
+table, tr, td, th {
+    border: 1px solid;
+    border-color: #592500;;
+    border-style: groove;
+    padding: 5px;
+}
+
+table tr.high {
+    color: #922b21;
+    background-color: #f7b5ae;
+}
+
+table tr.low {
+    color: #55c885;
+    background-color: #c5f0d7;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container.page-container {
+        border-radius: 0;
+    }
+}
