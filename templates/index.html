@@ -30,12 +30,14 @@
                         <th>Храна</th>
                         <th>FODMAP</th>
                         <th>Тип</th>
+                        <th>Честота</th>
                     </tr>
                     {% for food in food_results %}
                     <tr {% if food.fodmap_type == 'low' %} class="low" {% else %} class="high" {% endif%}>
                         <td>{{ food.name }}</td>
                         <td>{{ food.fodmap_type }}</td>
                         <td>{{ food.category }}</td>
+                        <td>{{ food.weight }}</td>
                     </tr>
                     {% endfor %}
                 </table>

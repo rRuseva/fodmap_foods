@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-# from pandas import dataframe
 from dataclasses import dataclass
 from enum import Enum
 class fodmap(Enum):
@@ -26,6 +25,7 @@ def look_up_by_food_name(food_name, dict):
     for key in dict.keys():
         if food_name in key:
             results.append(dict[key])
+   
     return results
 
 def read_food_catalog(dir_name):

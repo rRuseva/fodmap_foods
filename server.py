@@ -26,7 +26,20 @@ def get_food_info():
     if len(food_results) == 0:
         return render_template('food-not-found.html')
     
-    food_results = sorted(food_results, key=lambda food:food.fodmap_type, reverse=True)
+    # print(f"{food_results=}")
+    # food_results = sorted(food_results, key=lambda food:food.fodmap_type, reverse=True)
+    food_results_l = []
+    food_results_h = []
+    for f in food_results:
+        if f.fodmap_type == 'low':
+            food_results_l.append(f)
+        else:
+            food_results_h.append(f)
+    food_results_l = sorted(food_results_l, key=lambda food:food.weight, reverse=True)
+    food_results_h = sorted(food_results_h, key=lambda food:food.weight, reverse=True)
+    
+    food_results = food_results_l + food_results_h
+    # print(f"{food_results=}")
     return render_template("index.html",
                            food_results=food_results, 
                            number_of_results=len(food_results) )
