@@ -30,7 +30,7 @@ input, button {
 
 input.form-control{
     display: inline-block;
-    width: 70%;
+    width: 50%;
 }
 
 .container.page-container {
@@ -43,9 +43,13 @@ input.form-control{
 
 .page-container h1 {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 50px;
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
+}
+
+.page-container p {
+    margin: 30px;
 }
 
 table{

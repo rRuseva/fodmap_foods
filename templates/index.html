@@ -15,12 +15,13 @@
     <div class="container page-container">
         <div class="row justify-content-center">
             <div class="text-center page-description text-center ">
+                <p>FODMAP е английското съкращение за ферментируеми олигозахариди, дизахариди, онозахариди и полиоли. Това означава бързо ферментиращи въглехидрати, като тези в сладкиши, хляб (особено пшеничен), млечни продукти, костилкови плодове или зеле. Полиолите (захарните алкохоли) се намират в много промишлено произведени продукти като подсладители или овлажнители.</p>
                 <h1 class="mb-5">Провери храна</h1>
             </div>
             <div class="justify-content-center input-group">
                 <form action="/foods">
-                    <input class="form-control" type="text" name="food" id="food" placeholder="Enter a food" />
-                    <button type="submit" class="btn btn-light">Submit</button>
+                    <input class="form-control" type="text" name="food" id="food" placeholder="Въведи храна" />
+                    <button type="submit" class="btn btn-light">Провери</button>
                 </form>                
             </div>
             {% if number_of_results > 0 %}
